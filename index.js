@@ -21,8 +21,8 @@ const apiKey = 'ee9081abd252569a8343bff3f7fc5e8f'
 searchBtn.addEventListener('click', () => {
     if (cityInput.value.trim() != '') {
         updateWeatherInfo(cityInput.value)
-         cityInput.value = '';
-         cityInput.blur();
+        cityInput.value = '';
+        cityInput.blur();
     }
 });
 cityInput.addEventListener('keydown', (event) => {
@@ -37,29 +37,29 @@ cityInput.addEventListener('keydown', (event) => {
 
 async function getFetchData(endPoint, city) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/${endPoint}?q=${city}&appid=${apiKey}&units=metric`
-    
+
     const respone = await fetch(apiUrl)
 
     return respone.json()
 }
 
 
-    function getWeatherIcon(id, isNight) {
-        if (id <= 232) return 'thunderstorm.svg';
-        if (id <= 321) return 'drizzle.svg';
-        if (id >= 500 && id <= 504) return 'rain.svg';
-        if (id === 511) return 'snow.svg';
-        if (id >= 502 && id <= 531) return 'rain.svg';
-        if (id <= 622) return 'snow.svg';
-        if (id <= 781) return 'atmosphere.svg';
-    
-        // 根據白天/夜晚顯示不同的圖示
-        if (id === 800) return isNight ? 'clear-n.svg' : 'clear-d.svg';
-        if (id === 801) return isNight ? 'clouds-n.svg' : 'clouds-d.svg';
-        if (id === 802) return 'clouds-2.svg';
-        if (id === 803 || id === 804) return 'clouds-3.svg';
-    
-        return 'default.svg';
+function getWeatherIcon(id, isNight) {
+    if (id <= 232) return 'thunderstorm.svg';
+    if (id <= 321) return 'drizzle.svg';
+    if (id >= 500 && id <= 504) return 'rain.svg';
+    if (id === 511) return 'snow.svg';
+    if (id >= 502 && id <= 531) return 'rain.svg';
+    if (id <= 622) return 'snow.svg';
+    if (id <= 781) return 'atmosphere.svg';
+
+    // 根據白天/夜晚顯示不同的圖示
+    if (id === 800) return isNight ? 'clear-n.svg' : 'clear-d.svg';
+    if (id === 801) return isNight ? 'clouds-n.svg' : 'clouds-d.svg';
+    if (id === 802) return 'clouds-2.svg';
+    if (id === 803 || id === 804) return 'clouds-3.svg';
+
+    return 'default.svg';
 }
 
 function getCurrentDate() {
@@ -86,12 +86,26 @@ async function updateWeatherInfo(city) {
         sys: { sunrise, sunset }
     } = weatherData;
 
-    // 取得當前時間（當地時區）
-    const nowUTC = Math.floor(Date.now() / 1000);
-    const localTime = nowUTC + timezone;
-     
+    // 取得當前時間（當地時區）old
+    // const nowUTC = Math.floor(Date.now() / 1000);
+    // const localTime = nowUTC + timezone;
+
     // 判斷是否為夜晚
-    const isNight = localTime < sunrise || localTime > sunset;
+    // const isNight = localTime < sunrise || localTime > sunset;
+
+    // 取得當前時間（UTC）
+    const nowUTC = Math.floor(Date.now() / 1000);
+
+    // 計算當地時間
+    const localTime = nowUTC + timezone;
+
+    // 調整日出日落時間至當地時區
+    const localSunrise = sunrise + timezone;
+    const localSunset = sunset + timezone;
+
+    // 判斷是否為夜晚
+    const isNight = localTime < localSunrise || localTime > localSunset;
+
 
 
     countrytxt.textContent = country
@@ -113,12 +127,12 @@ async function updateWeatherInfo(city) {
 
 async function updateforecastInfo(city) {
     const forecastData = await getFetchData('forecast', city);
-    
+
     if (forecastData.cod !== "200") {
         console.error("無法獲取天氣預報數據");
         return;
     }
-    
+
     forecastContainer.innerHTML = ''; // 清空先前的預測內容
 
     const timeTaken = '12:00:00'; // 只取每天的中午 12 點天氣數據
@@ -134,7 +148,7 @@ async function updateforecastInfo(city) {
     });
 
     // 未來4天的數據
-    const forecastArray = Object.values(dailyForecasts).slice(0, 4);
+    const forecastArray = Object.values(dailyForecasts).slice(1, 5);
 
     forecastArray.forEach(data => {
         const { main: { temp }, weather: [{ id, main }], dt } = data;
@@ -158,6 +172,6 @@ async function updateforecastInfo(city) {
 function showDisplaySection(section) {
     [weatherInfoSection, notFoundSection, searchCitySection]
         .forEach(section => section.style.display = 'none')
-    
+
     section.style.display = 'flex'
 }
