@@ -1,0 +1,26 @@
+html {
+  width: 100%;
+  height: 100%;
+  body {
+    width: 100%;
+    height: 100dvh;
+    position: relative;
+    color: #fff;
+    background: url("../img/bg.jpg") center / cover;
+    @include d_flex(center, center);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(5px);
+    }
+
+
+    @import "./mainWrap";
+    @import "./popup";
+  }
+}

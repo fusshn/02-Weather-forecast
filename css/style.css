@@ -1,0 +1,475 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+span {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+tr,
+td {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default;
+}
+tr p,
+td p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  display: block;
+}
+button > i {
+  font-size: inherit;
+  color: inherit;
+}
+
+select,
+input {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+label {
+  display: block;
+}
+
+a {
+  color: #000;
+  display: block;
+  text-decoration: none;
+}
+a > i {
+  font-size: inherit;
+  color: inherit;
+}
+
+i {
+  display: block;
+}
+
+img {
+  display: block;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator,
+input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+          appearance: none;
+  opacity: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  color: #fff;
+  background: url("../img/bg.jpg") center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+html body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(5px);
+}
+html body main {
+  width: 300px;
+  height: 500px;
+  z-index: 2;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.15)), to(rgba(255, 255, 255, 0.15)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
+  border-radius: 12px;
+  backdrop-filter: blur(100px);
+  padding: 20px;
+}
+html body main header {
+  position: relative;
+  margin-bottom: 24px;
+}
+html body main header input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 99px;
+  border: 3px solid transparent;
+  background: rgba(0, 0, 0, 0.15);
+  outline: none;
+  font-weight: 500;
+  -webkit-transition: 0.25s border;
+  transition: 0.25s border;
+  padding-right: 45px;
+  color: #fff;
+}
+html body main header input:focus, html body main header input:hover {
+  border: 3px solid rgba(0, 0, 0, 0.15);
+}
+html body main header input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html body main header input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html body main header input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html body main header input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html body main header input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+html body main header button {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+html body main header button span {
+  color: #fff;
+}
+html body main section.weather-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 24px;
+}
+html body main section.weather-info .location-date-container,
+html body main section.weather-info .weather-summary-container,
+html body main section.weather-info .weather-conditions-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+html body main section.weather-info .location,
+html body main section.weather-info .condition-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+html body main section.weather-info .weather-icon {
+  width: 120px;
+  height: 120px;
+}
+html body main section.weather-info .weather-summary-info {
+  text-align: end;
+}
+html body main section.weather-info .condition-item span {
+  font-size: 30px;
+}
+html body main section.weather-info .forecast-items-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  overflow-x: scroll;
+  padding-bottom: 12px;
+}
+html body main section.weather-info .forecast-items-container::-webkit-scrollbar {
+  height: 8px;
+}
+html body main section.weather-info .forecast-items-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 99px;
+}
+html body main section.weather-info .forecast-items-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 99px;
+}
+html body main section.weather-info .forecast-items-container .forecast-item {
+  min-width: 70px;
+  background: rgba(255, 255, 255, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 6px;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 12px;
+  -webkit-transition: 0.3s background;
+  transition: 0.3s background;
+}
+html body main section.weather-info .forecast-items-container .forecast-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+html body main section.weather-info .forecast-items-container .forecast-item .forecast-item-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 35px;
+  height: 35px;
+}
+html body main section.section-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  gap: 12px;
+  text-align: center;
+  margin-top: 25%;
+}
+html body main section.section-message img {
+  width: auto;
+  max-height: 240px;
+  min-width: 100%;
+  border-radius: 12px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+html body main section.section-message div {
+  font-weight: bold;
+}
+html body main section.section-message div h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+html body main section.section-message div h4 {
+  font-size: 16px;
+}
+html body .filter .popup {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 95vw;
+  max-width: 30rem;
+  display: none;
+}
+html body .filter .popup.display {
+  display: block;
+}
+html body .filter .popup.display ~ .mask {
+  display: block;
+}
+html body .filter .mask {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.5019607843);
+}

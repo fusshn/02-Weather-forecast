@@ -1,0 +1,107 @@
+// flex
+@mixin d_flex($jc: null, $ai: null, $ff: null, $g: null) {
+  display: flex;
+  @if $jc != null {
+    justify-content: $jc;
+  }
+  @if $ai != null {
+    align-items: $ai;
+  }
+  @if $ff != null {
+    flex-flow: $ff;
+  }
+  @if $g != null {
+    gap: $g;
+  }
+  @content;
+}
+// flex 橫式置中
+%flex_c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// flex 直式置中
+%flex_col_c {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// 文字省略
+@mixin ellipsis($line: 1, $w: 100%) {
+  width: $w;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $line != null {
+    @if $line == 1 {
+      // 設為單行省略
+      white-space: nowrap;
+    } @else {
+      // 指定多行省略
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: $line;
+    }
+  }
+}
+
+@mixin position(
+  $p: absolute,
+  $set: null,
+  $t: null,
+  $r: null,
+  $b: null,
+  $l: null,
+  $z: null
+) {
+  position: $p;
+  // 上下左右中定位
+  @if ($set != null) {
+    @if $set == "center" {
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+    } @else if $set == "top" {
+      inset: 0 auto auto 50%;
+      transform: translateX(-50%);
+    } @else if $set == "right" {
+      inset: 50% 0 auto auto;
+      transform: translateY(-50%);
+    } @else if $set == "bottom" {
+      inset: auto auto 0 50%;
+      transform: translateX(-50%);
+    } @else if $set == "left" {
+      inset: 50% auto auto 0;
+      transform: translateY(-50%);
+    }
+  } @else {
+    @if ($t != null) {
+      top: $t;
+    }
+    @if ($r != null) {
+      right: $r;
+    }
+    @if ($b != null) {
+      bottom: $b;
+    }
+    @if ($l != null) {
+      left: $l;
+    }
+  }
+  @if ($z != null) {
+    z-index: $z;
+  }
+  @content;
+}
+
+// px to vw
+@function px-vw($px, $width: 1200) {
+  @if ($px == null or $width == null) {
+    @error "please enter both $px and $width";
+  } @else {
+    @return ($px/$width) * 1vw;
+  }
+}
+
+    

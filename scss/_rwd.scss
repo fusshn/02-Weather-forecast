@@ -1,0 +1,29 @@
+$device: (
+  mobile: 768px,
+  pad: 1000px,
+  bigPad: 1399px,
+  pc: 1400px,
+);
+
+$deviceNames: map-keys($device);
+
+@function device($key) {
+  @if not map-has-key($device, $key) {
+    @error "#{$key}is wrong, please use the correct device name:#{join($deviceNames , ',')}";
+  }
+  @return map-get($device, $key);
+}
+
+@mixin respond($key, $mode: auto) {
+  $size: device($key);
+
+  @if ($mode == min) or ($mode == auto and $key == pc) {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $size) {
+      @content;
+    }
+  }
+}

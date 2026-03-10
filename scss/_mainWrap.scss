@@ -1,0 +1,150 @@
+main {
+  width: 300px;
+  height: 500px;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0, 0.15),
+    rgb(255, 255, 255, 0.15)
+  );
+  border-radius: 12px;
+  backdrop-filter: blur(100px);
+  padding: 20px;
+
+  header {
+    position: relative;
+    margin-bottom: 24px;
+
+    input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 99px;
+      border: 3px solid transparent;
+      background: rgba(0, 0, 0, 0.15);
+      outline: none;
+      font-weight: 500;
+      transition: 0.25s border;
+      padding-right: 45px;
+      color: #fff;
+
+      &:focus,&:hover {
+        border: 3px solid rgba(0, 0, 0, 0.15);
+      }
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.75);
+      }
+    }
+
+    button {
+      @include position($t: 50%, $r: 16px);
+      transform: translateY(-50%);
+      display: flex;
+      background: none;
+      border: none;
+      cursor: pointer;
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  section {
+    &.weather-info {
+      @include d_flex($ff: column, $g: 24px);
+
+      .location-date-container,
+      .weather-summary-container,
+      .weather-conditions-container {
+        @include d_flex(space-between, center);
+      }
+
+      .location,
+      .condition-item {
+        @include d_flex($ai: center, $g: 6px);
+      }
+
+      .weather-icon {
+        width: 120px;
+        height: 120px;
+      }
+
+      .weather-summary-info {
+        text-align: end;
+      }
+
+      .condition-item span {
+        font-size: 30px;
+      }
+
+      // 預報項目容器
+      .forecast-items-container {
+        display: flex;
+        gap: 15px;
+        overflow-x: scroll;
+        padding-bottom: 12px;
+
+        // 捲軸樣式
+        &::-webkit-scrollbar {
+          height: 8px;
+
+          &-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 99px;
+          }
+
+          &-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 99px;
+          }
+        }
+
+        // 預報項目
+        .forecast-item {
+          min-width: 70px;
+          background: rgba(255, 255, 255, 0.1);
+          @include d_flex($ff: column, $g: 6px);
+          padding: 10px;
+          align-items: center;
+          border-radius: 12px;
+          transition: 0.3s background;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.25);
+          }
+
+          .forecast-item-icon {
+            display: flex;
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+    }
+
+    &.section-message {
+      @include d_flex($ai: center, $ff: column, $g: 12px);
+      text-align: center;
+      margin-top: 25%;
+
+      img {
+        width: auto;
+        max-height: 240px;
+        min-width: 100%;
+        border-radius: 12px;
+        object-fit: contain;
+      }
+      div {
+        font-weight: bold;
+        h1 {
+          font-size: 32px; 
+          margin-bottom: 8px;
+        }
+        
+        h4 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.filter {
+  .popup {
+    @include position($p: fixed, $set:"center",$z:10);
+    width: 95vw;
+    max-width: 30rem;
+    display: none;
+    &.display {
+      display: block;
+      & ~ .mask {
+        display: block;
+      }
+    }
+  }
+  .mask {
+    display: none;
+    width: 100%;
+    height: 100%;
+    @include position($p: fixed, $t: 0, $l: 0, $z: 9);
+    background: #00000080;
+  }
+}
+    
