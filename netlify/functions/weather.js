@@ -1,9 +1,10 @@
 // netlify/functions/weather.js
 export async function handler(event) {
-  const { endpoint, city, lat, lon } = event.queryStringParameters;
+  const params = event.queryStringParameters || {};
+  const { endpoint, city, lat, lon, iplocate } = params;
   const apiKey = process.env.OWM_KEY;
 
-  //IP定位
+  // IP 定位
   if (iplocate) {
     const clientIP = event.headers['x-forwarded-for'] || '';
     const res = await fetch(`http://ip-api.com/json/${clientIP}`);
@@ -17,10 +18,8 @@ export async function handler(event) {
 
   let url = "";
   if (lat && lon) {
-    // 經緯度查詢
     url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   } else {
-    // 城市名稱查詢（weather 或 forecast）
     url = `https://api.openweathermap.org/data/2.5/${endpoint}?q=${city}&appid=${apiKey}&units=metric`;
   }
 
