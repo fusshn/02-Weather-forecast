@@ -30,12 +30,6 @@ cityInput.addEventListener("keydown", (event) => {
   }
 });
 
-// async function getFetchData(endPoint, city) {
-//   const apiUrl = `https://api.openweathermap.org/data/2.5/${endPoint}?q=${city}&appid=${apiKey}&units=metric`;
-//   const respone = await fetch(apiUrl);
-//   return respone.json();
-// }
-
 async function getFetchData(endPoint, city) {
   const res = await fetch(
     `/.netlify/functions/weather?endpoint=${endPoint}&city=${encodeURIComponent(city)}`,
