@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   // 方案 A: 使用 IP 定位(不需授權)
   try {
     console.log("📍 嘗試 IP 定位...");
-    const response = await fetch("https://ip-api.com/json/");
+    const response = await fetch("http://ip-api.com/json/");
     const data = await response.json();
 
     if (data.city) {
