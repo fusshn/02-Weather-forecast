@@ -202,12 +202,12 @@ async function updateWeatherInfoByCoords(lat, lon) {
 window.addEventListener("DOMContentLoaded", async () => {
   try {
     console.log("📍 嘗試 IP 定位...");
-    const response = await fetch("https://freeipapi.com/api/json");
+    const response = await fetch("/.netlify/functions/weather?iplocate=1");
     const data = await response.json();
 
-    if (data.cityName) {
-      console.log("✅ IP 定位成功! 城市:", data.cityName);
-      await updateWeatherInfo(data.cityName);
+    if (data.city) {
+      console.log("✅ IP 定位成功! 城市:", data.city);
+      await updateWeatherInfo(data.city);
       return;
     }
   } catch (error) {
