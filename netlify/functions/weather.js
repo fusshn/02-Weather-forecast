@@ -6,7 +6,7 @@ export async function handler(event) {
 
   // IP 定位
   if (iplocate) {
-    const clientIP = event.headers['x-forwarded-for'] || '';
+    const clientIP = (event.headers['x-forwarded-for'] || '').split(',')[0].trim();
     const res = await fetch(`http://ip-api.com/json/${clientIP}`);
     const data = await res.json();
     return {
