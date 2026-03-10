@@ -200,16 +200,15 @@ async function updateWeatherInfoByCoords(lat, lon) {
 
 // 自動定位
 window.addEventListener("DOMContentLoaded", async () => {
-  // 方案 A: 使用 IP 定位(不需授權)
   try {
     console.log("📍 嘗試 IP 定位...");
-    const response = await fetch("http://ip-api.com/json/");
+    const response = await fetch("https://ipapi.co/json/");
     const data = await response.json();
 
     if (data.city) {
-      console.log("✅ IP 定位成功!城市:", data.city);
+      console.log("✅ IP 定位成功! 城市:", data.city);
       await updateWeatherInfo(data.city);
-      return; // 成功就結束
+      return;
     }
   } catch (error) {
     console.log("IP 定位失敗:", error);
