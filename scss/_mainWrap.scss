@@ -1,43 +1,45 @@
 main {
-  width: 300px;
-  height: 500px;
+  width: 60%;
+  height: 47.5rem;
   z-index: 2;
   background: linear-gradient(
     to top,
     rgb(0, 0, 0, 0.15),
     rgb(255, 255, 255, 0.15)
   );
-  border-radius: 12px;
+  border-radius: .75rem;
   backdrop-filter: blur(100px);
-  padding: 20px;
+  padding: 1.25rem;
 
   header {
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
 
     input {
       width: 100%;
-      padding: 10px 16px;
-      border-radius: 99px;
-      border: 3px solid transparent;
+      padding: 1rem 1.5rem;
+      border-radius: 6.25rem;
+      border: .25rem solid transparent;
       background: rgba(0, 0, 0, 0.15);
       outline: none;
-      font-weight: 500;
+      font-weight: bold;
       transition: 0.25s border;
-      padding-right: 45px;
+      padding-right: 2.85rem;
+      font-size: 1.5rem;
       color: #fff;
 
       &:focus,&:hover {
-        border: 3px solid rgba(0, 0, 0, 0.15);
+        border: .25rem solid rgba(0, 0, 0, 0.15);
       }
 
       &::placeholder {
         color: rgba(255, 255, 255, 0.75);
+        font-size: 1.25rem;
       }
     }
 
     button {
-      @include position($t: 50%, $r: 16px);
+      @include position($t: 50%, $r: 1rem);
       transform: translateY(-50%);
       display: flex;
       background: none;
@@ -45,13 +47,17 @@ main {
       cursor: pointer;
       span {
         color: #fff;
+        &.material-symbols-outlined {
+          font-size: 40px;
+        }
       }
     }
   }
 
   section {
     &.weather-info {
-      @include d_flex($ff: column, $g: 24px);
+      @include d_flex($ff: column, $g: 1rem);
+      padding: 0 2rem;
 
       .location-date-container,
       .weather-summary-container,
@@ -59,55 +65,65 @@ main {
         @include d_flex(space-between, center);
       }
 
+      .location-date-container,
+      .weather-summary-container {
+        font-size: 3rem;
+      }
+
+      .weather-conditions-container {
+        font-size: 1.5rem;
+      }
+
       .location,
       .condition-item {
-        @include d_flex($ai: center, $g: 6px);
+        @include d_flex($ai: center, $g: .375rem);
       }
 
       .weather-icon {
-        width: 120px;
-        height: 120px;
+        width: 15rem;
+        height: 15rem;
       }
 
       .weather-summary-info {
         text-align: end;
       }
-
+      
       .condition-item span {
-        font-size: 30px;
+        font-size: 5rem;
       }
 
       // 預報項目容器
       .forecast-items-container {
         display: flex;
-        gap: 15px;
+        gap: 3.5rem;
         overflow-x: scroll;
-        padding-bottom: 12px;
+        padding-bottom: 1.5rem;
 
         // 捲軸樣式
         &::-webkit-scrollbar {
-          height: 8px;
+          height: 1rem;
 
           &-track {
             background: rgba(0, 0, 0, 0.1);
-            border-radius: 99px;
+            border-radius: 6.25rem;
           }
 
           &-thumb {
             background: rgba(0, 0, 0, 0.15);
-            border-radius: 99px;
+            border-radius: 6.25rem;
           }
         }
 
         // 預報項目
         .forecast-item {
-          min-width: 70px;
+          min-width: 12rem;
           background: rgba(255, 255, 255, 0.1);
-          @include d_flex($ff: column, $g: 6px);
-          padding: 10px;
+          @include d_flex($ff: column, $g: .375rem);
+          padding: .625rem;
           align-items: center;
-          border-radius: 12px;
+          border-radius: .75rem;
           transition: 0.3s background;
+          font-size: 1.25rem;
 
           &:hover {
             background: rgba(255, 255, 255, 0.25);
@@ -115,21 +131,41 @@ main {
 
           .forecast-item-icon {
             display: flex;
-            width: 35px;
-            height: 35px;
+            width: 5rem;
+            height: 5rem;
+          }
+        }
+
+        // @include respond(bigPad) {
+        //   gap: 2.5rem;
+        // }
+        // @include respond(pad) {
+        //   gap: 1.75rem;
+        //   .forecast-item {
+        //     min-width: 9rem;
+        //   }
+        // }
+        @include respond(mobile) {
+          gap: 1rem;
+          .forecast-item {
+            min-width: 6rem;
+            .forecast-item-icon {
+              width: 4rem;
+              height: 4rem;
+            }
           }
         }
       }
     }
 
     &.section-message {
-      @include d_flex($ai: center, $ff: column, $g: 12px);
+      @include d_flex($ai: center, $ff: column, $g: .75rem);
       text-align: center;
       margin-top: 25%;
 
       img {
         width: auto;
-        max-height: 240px;
+        max-height: 800px;
         min-width: 100%;
         border-radius: 12px;
         object-fit: contain;
@@ -146,5 +182,101 @@ main {
         }
       }
     }
+  }
+  
+  @include respond(bigPad) {
+    section {
+      &.weather-info {
+        .forecast-items-container {
+          gap: 2.5rem;
+        }
+      }
+    }
+  }
+  @include respond(pad) {
+    section {
+      &.weather-info {
+        gap: 2rem;
+
+        .location-date-container,
+        .weather-summary-container {
+          font-size: 2.25rem;
+        }
+
+        .weather-conditions-container {
+          font-size: 1.25rem;
+        }
+
+        .weather-icon {
+          width: 13rem;
+          height: 13rem;
+        }
+
+        .condition-item span {
+          font-size: 4rem;
+        }
+
+        .forecast-items-container {
+          gap: 1.75rem;
+          .forecast-item {
+            min-width: 9rem;
+          }
+        }
+      }
+    }
+  }
+  @include respond(mobile) {
+    width: 85%;
+    height: 40rem;
+
+    header {
+      input {  
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        &::placeholder {
+          font-size: 1rem;
+        }
+      }
+
+      button {
+        span {
+          &.material-symbols-outlined {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    section {
+      &.weather-info {
+        padding: 0;
+        gap: 1rem;
+
+        .location-date-container,
+        .weather-summary-container {
+          font-size: 2rem;
+        }
+
+        .weather-conditions-container {
+          font-size: 1rem;
+        }
+
+        .weather-icon {
+          width: 10rem;
+          height: 10rem;
+        }
+        .forecast-items-container {
+          gap: 1rem;
+          .forecast-item {
+            min-width: 6rem;
+            .forecast-item-icon {
+              width: 4rem;
+              height: 4rem;
+            }
+          }
+        }
+      }
+    }
+
   }
 }

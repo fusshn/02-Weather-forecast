@@ -176,7 +176,7 @@ function showDisplaySection(section) {
   section.style.display = "flex";
 }
 
-// 新增用經緯度查詢的函式
+// 經緯度查詢
 async function updateWeatherInfoByCoords(lat, lon) {
   // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
@@ -199,19 +199,21 @@ async function updateWeatherInfoByCoords(lat, lon) {
 }
 
 // 自動定位
-window.addEventListener("DOMContentLoaded", async () => {
-  try {
-    console.log("📍 嘗試 IP 定位...");
-    const response = await fetch("/.netlify/functions/weather?iplocate=1");
-    const data = await response.json();
+// window.addEventListener("DOMContentLoaded", async () => {
+//   try {
+//     console.log("📍 嘗試 IP 定位...");
+//     const response = await fetch("/.netlify/functions/weather?iplocate=1");
+//     const data = await response.json();
 
-    if (data.city) {
-      console.log("✅ IP 定位成功! 城市:", data.city);
-      await updateWeatherInfo(data.city);
-      return;
-    }
-  } catch (error) {
-    console.log("IP 定位失敗:", error);
-    showDisplaySection(searchCitySection);
-  }
-});
+//     if (data.city) {
+//       console.log("✅ IP 定位成功! 城市:", data.city);
+//       await updateWeatherInfo(data.city);
+//       return;
+//     }
+//   } catch (error) {
+//     console.log("IP 定位失敗:", error);
+//     showDisplaySection(searchCitySection);
+//   }
+// });
+
+showDisplaySection(weatherInfoSection);
