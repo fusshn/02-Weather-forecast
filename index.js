@@ -199,21 +199,21 @@ async function updateWeatherInfoByCoords(lat, lon) {
 }
 
 // 自動定位
-window.addEventListener("DOMContentLoaded", async () => {
-  try {
-    console.log("📍 嘗試 IP 定位...");
-    const response = await fetch("/.netlify/functions/weather?iplocate=1");
-    const data = await response.json();
+// window.addEventListener("DOMContentLoaded", async () => {
+//   try {
+//     console.log("📍 嘗試 IP 定位...");
+//     const response = await fetch("/.netlify/functions/weather?iplocate=1");
+//     const data = await response.json();
 
-    if (data.city) {
-      console.log("✅ IP 定位成功! 城市:", data.city);
-      await updateWeatherInfo(data.city);
-      return;
-    }
-  } catch (error) {
-    console.log("IP 定位失敗:", error);
-    showDisplaySection(searchCitySection);
-  }
-});
+//     if (data.city) {
+//       console.log("✅ IP 定位成功! 城市:", data.city);
+//       await updateWeatherInfo(data.city);
+//       return;
+//     }
+//   } catch (error) {
+//     console.log("IP 定位失敗:", error);
+//     showDisplaySection(searchCitySection);
+//   }
+// });
 
-// showDisplaySection(notFoundSection);
+showDisplaySection(weatherInfoSection);

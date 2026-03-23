@@ -537,7 +537,7 @@ html body main section.section-message div h4 {
   }
   html body main section.weather-info .location-date-container,
   html body main section.weather-info .weather-summary-container {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
   html body main section.weather-info .weather-conditions-container {
     font-size: 1rem;
@@ -545,6 +545,9 @@ html body main section.section-message div h4 {
   html body main section.weather-info .weather-icon {
     width: 10rem;
     height: 10rem;
+  }
+  html body main section.weather-info .condition-item span {
+    font-size: 3rem;
   }
   html body main section.weather-info .forecast-items-container {
     gap: 1rem;
