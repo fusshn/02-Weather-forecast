@@ -446,13 +446,12 @@ html body main section.section-message {
           flex-flow: column;
   gap: 0.75rem;
   text-align: center;
-  margin-top: 25%;
+  margin-top: 5%;
 }
 html body main section.section-message img {
   width: auto;
-  max-height: 800px;
+  max-height: 30rem;
   min-width: 100%;
-  border-radius: 12px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -460,11 +459,11 @@ html body main section.section-message div {
   font-weight: bold;
 }
 html body main section.section-message div h1 {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 html body main section.section-message div h4 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 @media (max-width: 1399px) {
   html body main section.weather-info .forecast-items-container {
@@ -472,6 +471,9 @@ html body main section.section-message div h4 {
   }
   html body main section.weather-info .forecast-items-container .forecast-item {
     min-width: 12rem;
+  }
+  html body main section.section-message img {
+    max-height: 25rem;
   }
 }
 @media (max-width: 1000px) {
@@ -497,6 +499,9 @@ html body main section.section-message div h4 {
   }
   html body main section.weather-info .forecast-items-container .forecast-item {
     min-width: 9rem;
+  }
+  html body main section.section-message img {
+    max-height: 20rem;
   }
 }
 @media (max-width: 768px) {

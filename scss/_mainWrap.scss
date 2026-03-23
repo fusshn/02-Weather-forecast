@@ -161,24 +161,23 @@ main {
     &.section-message {
       @include d_flex($ai: center, $ff: column, $g: .75rem);
       text-align: center;
-      margin-top: 25%;
+      margin-top: 5%;
 
       img {
         width: auto;
-        max-height: 800px;
-        min-width: 100%;
-        border-radius: 12px;
+        max-height: 30rem;
+        min-width: 100%;;
         object-fit: contain;
       }
       div {
         font-weight: bold;
         h1 {
-          font-size: 32px; 
-          margin-bottom: 8px;
+          font-size: 2rem; 
+          margin-bottom: .5rem;
         }
         
         h4 {
-          font-size: 16px;
+          font-size: 1rem;
         }
       }
     }
@@ -192,6 +191,11 @@ main {
           .forecast-item {
             min-width: 12rem;
           }
+        }
+      }
+      &.section-message {
+        img {
+          max-height: 25rem;
         }
       }
     }
@@ -224,6 +228,11 @@ main {
           .forecast-item {
             min-width: 9rem;
           }
+        }
+      }
+      &.section-message {
+        img {
+          max-height: 20rem;
         }
       }
     }
