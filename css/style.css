@@ -404,7 +404,7 @@ html body main section.weather-info .forecast-items-container::-webkit-scrollbar
   border-radius: 6.25rem;
 }
 html body main section.weather-info .forecast-items-container .forecast-item {
-  min-width: 12rem;
+  min-width: 17.5rem;
   background: rgba(255, 255, 255, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -432,18 +432,6 @@ html body main section.weather-info .forecast-items-container .forecast-item .fo
   display: flex;
   width: 5rem;
   height: 5rem;
-}
-@media (max-width: 768px) {
-  html body main section.weather-info .forecast-items-container {
-    gap: 1rem;
-  }
-  html body main section.weather-info .forecast-items-container .forecast-item {
-    min-width: 6rem;
-  }
-  html body main section.weather-info .forecast-items-container .forecast-item .forecast-item-icon {
-    width: 4rem;
-    height: 4rem;
-  }
 }
 html body main section.section-message {
   display: -webkit-box;
@@ -481,6 +469,9 @@ html body main section.section-message div h4 {
 @media (max-width: 1399px) {
   html body main section.weather-info .forecast-items-container {
     gap: 2.5rem;
+  }
+  html body main section.weather-info .forecast-items-container .forecast-item {
+    min-width: 12rem;
   }
 }
 @media (max-width: 1000px) {
@@ -554,7 +545,7 @@ html body main section.section-message div h4 {
     gap: 1rem;
   }
   html body main section.weather-info .forecast-items-container .forecast-item {
-    min-width: 6rem;
+    min-width: 9rem;
   }
   html body main section.weather-info .forecast-items-container .forecast-item .forecast-item-icon {
     width: 4rem;

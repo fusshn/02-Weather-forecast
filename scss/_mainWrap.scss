@@ -116,7 +116,7 @@ main {
 
         // 預報項目
         .forecast-item {
-          min-width: 12rem;
+          min-width: 17.5rem;
           background: rgba(255, 255, 255, 0.1);
           @include d_flex($ff: column, $g: .375rem);
           padding: .625rem;
@@ -145,16 +145,16 @@ main {
         //     min-width: 9rem;
         //   }
         // }
-        @include respond(mobile) {
-          gap: 1rem;
-          .forecast-item {
-            min-width: 6rem;
-            .forecast-item-icon {
-              width: 4rem;
-              height: 4rem;
-            }
-          }
-        }
+        // @include respond(mobile) {
+        //   gap: 1rem;
+        //   .forecast-item {
+        //     min-width: 6rem;
+        //     .forecast-item-icon {
+        //       width: 4rem;
+        //       height: 4rem;
+        //     }
+        //   }
+        // }
       }
     }
 
@@ -189,6 +189,9 @@ main {
       &.weather-info {
         .forecast-items-container {
           gap: 2.5rem;
+          .forecast-item {
+            min-width: 12rem;
+          }
         }
       }
     }
@@ -268,7 +271,7 @@ main {
         .forecast-items-container {
           gap: 1rem;
           .forecast-item {
-            min-width: 6rem;
+            min-width: 9rem;
             .forecast-item-icon {
               width: 4rem;
               height: 4rem;
