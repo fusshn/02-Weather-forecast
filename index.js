@@ -15,6 +15,11 @@ const weatherIcon = document.querySelector(".weather-icon");
 const currentDateTxt = document.querySelector(".current-date-txt");
 const forecastContainer = document.querySelector(".forecast-items-container");
 
+// 城市快選功能
+const quickCityBtn = document.querySelector(".quick-city-btn");
+const quickCityList = document.querySelector(".quick-city-list");
+const quickCityItems = document.querySelectorAll(".quick-city-item");
+
 searchBtn.addEventListener("click", () => {
   if (cityInput.value.trim() != "") {
     updateWeatherInfo(cityInput.value);
@@ -199,21 +204,41 @@ async function updateWeatherInfoByCoords(lat, lon) {
 }
 
 // 自動定位
-// window.addEventListener("DOMContentLoaded", async () => {
-//   try {
-//     console.log("📍 嘗試 IP 定位...");
-//     const response = await fetch("/.netlify/functions/weather?iplocate=1");
-//     const data = await response.json();
+window.addEventListener("DOMContentLoaded", async () => {
+  try {
+    console.log("📍 嘗試 IP 定位...");
+    const response = await fetch("/.netlify/functions/weather?iplocate=1");
+    const data = await response.json();
 
-//     if (data.city) {
-//       console.log("✅ IP 定位成功! 城市:", data.city);
-//       await updateWeatherInfo(data.city);
-//       return;
-//     }
-//   } catch (error) {
-//     console.log("IP 定位失敗:", error);
-//     showDisplaySection(searchCitySection);
-//   }
-// });
+    if (data.city) {
+      console.log("✅ IP 定位成功! 城市:", data.city);
+      await updateWeatherInfo(data.city);
+      return;
+    }
+  } catch (error) {
+    console.log("IP 定位失敗:", error);
+    showDisplaySection(searchCitySection);
+  }
+});
 
-showDisplaySection(weatherInfoSection);
+// showDisplaySection(weatherInfoSection);
+
+// 城市快選功能
+quickCityBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  quickCityList.classList.toggle("active");
+});
+
+quickCityItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const city = item.dataset.city;
+    updateWeatherInfo(city);
+    quickCityList.classList.remove("active");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".quick-city")) {
+    quickCityList.classList.remove("active");
+  }
+});
