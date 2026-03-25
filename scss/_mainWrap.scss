@@ -1,20 +1,20 @@
 main {
   width: 60%;
-  height: 760px;
+  height: 47.5rem;
   z-index: 2;
   background: linear-gradient(
     to top,
     rgb(0, 0, 0, 0.15),
     rgb(255, 255, 255, 0.15)
   );
-  border-radius: 12px;
+  border-radius: .75rem;
   backdrop-filter: blur(6.25rem);
-  padding: 20px;
+  padding: 1.25rem;
 
   header {
     position: relative;
-    margin-bottom: 24px;
-    @include d_flex(space-between, center, null, 8px);
+    margin-bottom: 1.5rem;
+    @include d_flex(space-between, center, null, .5rem);
 
     // 城市快選
     .quick-city {
@@ -26,8 +26,8 @@ main {
         background: rgba(0, 0, 0, 0.15);
         border: none;
         border-radius: 35%;
-        width: 72px;
-        height: 72px;
+        width: 4.5rem;
+        height: 4.5rem;
         cursor: pointer;
         color: #fff;
         @extend %flex_c;
@@ -46,7 +46,7 @@ main {
         position: absolute;
         top: calc(100% + 1rem);
         background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(.5rem);
         border-radius: 2rem;
         overflow: hidden;
         z-index: 10;
@@ -60,7 +60,7 @@ main {
         }
 
         li {
-          @include d_flex(space-between, center, null, 20px);
+          @include d_flex(space-between, center, null, 1.25rem);
           padding: .625rem 1rem;
           cursor: pointer;
           color: #000;
@@ -93,29 +93,29 @@ main {
 
       input {
         width: 100%;
-        padding: 16px 24px;
-        border-radius: 100px;
-        border: 4px solid transparent;
+        padding: 1rem 1.5rem;
+        border-radius: 6.25rem;
+        border: .25rem solid transparent;
         background: rgba(0, 0, 0, 0.15);
         outline: none;
         font-weight: bold;
         transition: 0.25s border;
-        padding-right: 45.6px;
-        font-size: 24px;
+        padding-right: 3rem;
+        font-size: 1.5rem;
         color: #fff;
   
         &:focus,&:hover {
-          border: 4px solid rgba(0, 0, 0, 0.15);
+          border: .25rem solid rgba(0, 0, 0, 0.15);
         }
   
         &::placeholder {
           color: rgba(255, 255, 255, 0.75);
-          font-size: 20px;
+          font-size: 1.25rem;
         }
       }
 
       button {
-        @include position($t: 50%, $r: 16px);
+        @include position($t: 50%, $r: 1rem);
         transform: translateY(-50%);
         display: flex;
         background: none;
@@ -124,19 +124,17 @@ main {
         span {
           color: #fff;
           &.material-symbols-outlined {
-            font-size: 40px;
+            font-size: 2.5rem;
           }
         }
       }
     }
-
-
   }
 
   section {
     &.weather-info {
-      @include d_flex($ff: column, $g: 16px);
-      padding: 0 32px;
+      @include d_flex($ff: column, $g: 1rem);
+      padding: 0 2rem;
 
       .location-date-container,
       .weather-summary-container,
@@ -146,21 +144,25 @@ main {
 
       .location-date-container,
       .weather-summary-container {
-        font-size: 48px;
+        font-size: 3rem;
       }
 
       .weather-conditions-container {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
 
       .location,
       .condition-item {
-        @include d_flex($ai: center, $g: 6px);
+        @include d_flex($ai: center, $g: .375rem);
+
+        span.material-symbols-outlined {
+          font-size: 2.5rem; 
+        }
       }
 
       .weather-icon {
-        width: 240px;
-        height: 240px;
+        width: 15rem;
+        height: 15rem;
       }
 
       .weather-summary-info {
@@ -168,41 +170,41 @@ main {
       }
       
       .condition-item span {
-        font-size: 80px;
+        font-size: 5rem;
       }
 
       // 預報項目容器
       .forecast-items-container {
         display: flex;
-        gap: 56px;
+        gap: 3.5rem;
         overflow-x: scroll;
-        padding-bottom: 24px;
+        padding-bottom: 1.5rem;
 
         // 捲軸樣式
         &::-webkit-scrollbar {
-          height: 16px;
+          height: 1rem;
 
           &-track {
             background: rgba(0, 0, 0, 0.1);
-            border-radius: 100px;
+            border-radius: 6.25rem;
           }
 
           &-thumb {
             background: rgba(0, 0, 0, 0.15);
-            border-radius: 100px;
+            border-radius: 6.25rem;
           }
         }
 
         // 預報項目
         .forecast-item {
-          min-width: 280px;
+          min-width: 17.5rem;
           background: rgba(255, 255, 255, 0.1);
-          @include d_flex($ff: column, $g: 6px);
-          padding: 10px;
+          @include d_flex($ff: column, $g: .375rem);
+          padding: .625rem;
           align-items: center;
-          border-radius: 12px;
+          border-radius: .75rem;
           transition: 0.3s background;
-          font-size: 20px;
+          font-size: 1.25rem;
 
           &:hover {
             background: rgba(255, 255, 255, 0.25);
@@ -210,53 +212,33 @@ main {
 
           .forecast-item-icon {
             display: flex;
-            width: 80px;
-            height: 80px;
+            width: 5rem;
+            height: 5rem;
           }
         }
-
-        // @include respond(bigPad) {
-        //   gap: 40px;
-        // }
-        // @include respond(pad) {
-        //   gap: 28px;
-        //   .forecast-item {
-        //     min-width: 144px;
-        //   }
-        // }
-        // @include respond(mobile) {
-        //   gap: 16px;
-        //   .forecast-item {
-        //     min-width: 96px;
-        //     .forecast-item-icon {
-        //       width: 64px;
-        //       height: 64px;
-        //     }
-        //   }
-        // }
       }
     }
 
     &.section-message {
-      @include d_flex($ai: center, $ff: column, $g: 12px);
+      @include d_flex($ai: center, $ff: column, $g: .75rem);
       text-align: center;
       margin-top: 5%;
 
       img {
         width: auto;
-        max-height: 480px;
+        max-height: 30rem;
         min-width: 100%;;
         object-fit: contain;
       }
       div {
         font-weight: bold;
         h1 {
-          font-size: 32px; 
-          margin-bottom: 8px;
+          font-size: 2rem; 
+          margin-bottom: .5rem;
         }
         
         h4 {
-          font-size: 16px;
+          font-size: 1rem;
         }
       }
     }
@@ -265,16 +247,20 @@ main {
   @include respond(bigPad) {
     section {
       &.weather-info {
+        .location-date-container,
+        .weather-summary-container {
+          font-size: 2rem;
+        }
         .forecast-items-container {
-          gap: 40px;
+          gap: 2.5rem;
           .forecast-item {
-            min-width: 192px;
+            min-width: 12rem;
           }
         }
       }
       &.section-message {
         img {
-          max-height: 400px;
+          max-height: 25rem;
         }
       }
     }
@@ -282,57 +268,68 @@ main {
   @include respond(pad) {
     section {
       &.weather-info {
-        gap: 32px;
+        gap: 2rem;
 
         .location-date-container,
         .weather-summary-container {
-          font-size: 36px;
+          font-size: 1.75rem;
         }
 
         .weather-conditions-container {
-          font-size: 20px;
+          font-size: 1.25rem;
         }
 
         .weather-icon {
-          width: 208px;
-          height: 208px;
+          width: 13rem;
+          height: 13rem;
         }
 
         .condition-item span {
-          font-size: 64px;
+          font-size: 4rem;
         }
 
         .forecast-items-container {
-          gap: 28px;
+          gap: 1.75rem;
           .forecast-item {
-            min-width: 144px;
+            min-width: 9rem;
           }
         }
       }
       &.section-message {
         img {
-          max-height: 320px;
+          max-height: 20rem;
         }
       }
     }
   }
   @include respond(mobile) {
     width: 85%;
-    height: 640px;
+    height: 40rem;
 
     header {
-      input {  
-        padding: 8px 16px;
-        font-size: 20px;
-        &::placeholder {
-          font-size: 16px;
+      .quick-city {
+        button {
+          width: 3.125rem;
+          height: 3.125rem;
+
+          span {
+            font-size: 2.5rem;
+          }
         }
       }
-
-      button {
-        span {
-          &.material-symbols-outlined {
-            font-size: 24px;
+      .search-wrap {   
+        input {  
+          padding: .5rem 1rem;
+          font-size: 1.25rem;
+          &::placeholder {
+            font-size: 0.8rem;
+          }
+        }
+        button {
+          span {
+            &.material-symbols-outlined {
+              font-size: 1.5rem;
+            }
           }
         }
       }
@@ -341,33 +338,33 @@ main {
     section {
       &.weather-info {
         padding: 0;
-        gap: 16px;
+        gap: 1rem;
 
         .location-date-container,
         .weather-summary-container {
-          font-size: 20px;
+          font-size: 1.25rem;
         }
 
         .weather-conditions-container {
-          font-size: 16px;
+          font-size: 1rem;
         }
 
         .weather-icon {
-          width: 160px;
-          height: 160px;
+          width: 10rem;
+          height: 10rem;
         }
 
         .condition-item span {
-          font-size: 48px;
+          font-size: 3rem;
         }
 
         .forecast-items-container {
-          gap: 16px;
+          gap: 1rem;
           .forecast-item {
-            min-width: 144px;
+            min-width: 9rem;
             .forecast-item-icon {
-              width: 64px;
-              height: 64px;
+              width: 4rem;
+              height: 4rem;
             }
           }
         }

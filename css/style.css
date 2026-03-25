@@ -277,17 +277,17 @@ html body::before {
 }
 html body main {
   width: 60%;
-  height: 760px;
+  height: 47.5rem;
   z-index: 2;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.15)), to(rgba(255, 255, 255, 0.15)));
   background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
-  border-radius: 12px;
+  border-radius: 0.75rem;
   backdrop-filter: blur(6.25rem);
-  padding: 20px;
+  padding: 1.25rem;
 }
 html body main header {
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,7 +297,7 @@ html body main header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 html body main header .quick-city {
   position: relative;
@@ -309,8 +309,8 @@ html body main header .quick-city button {
   background: rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 35%;
-  width: 72px;
-  height: 72px;
+  width: 4.5rem;
+  height: 4.5rem;
   cursor: pointer;
   color: #fff;
 }
@@ -325,7 +325,7 @@ html body main header .quick-city ul {
   position: absolute;
   top: calc(100% + 1rem);
   background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(0.5rem);
   border-radius: 2rem;
   overflow: hidden;
   z-index: 10;
@@ -352,7 +352,7 @@ html body main header .quick-city ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   padding: 0.625rem 1rem;
   cursor: pointer;
   color: #000;
@@ -381,45 +381,45 @@ html body main header .search-wrap {
 }
 html body main header .search-wrap input {
   width: 100%;
-  padding: 16px 24px;
-  border-radius: 100px;
-  border: 4px solid transparent;
+  padding: 1rem 1.5rem;
+  border-radius: 6.25rem;
+  border: 0.25rem solid transparent;
   background: rgba(0, 0, 0, 0.15);
   outline: none;
   font-weight: bold;
   -webkit-transition: 0.25s border;
   transition: 0.25s border;
-  padding-right: 45.6px;
-  font-size: 24px;
+  padding-right: 3rem;
+  font-size: 1.5rem;
   color: #fff;
 }
 html body main header .search-wrap input:focus, html body main header .search-wrap input:hover {
-  border: 4px solid rgba(0, 0, 0, 0.15);
+  border: 0.25rem solid rgba(0, 0, 0, 0.15);
 }
 html body main header .search-wrap input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 html body main header .search-wrap input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 html body main header .search-wrap input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 html body main header .search-wrap input::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 html body main header .search-wrap input::placeholder {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 html body main header .search-wrap button {
   position: absolute;
   top: 50%;
-  right: 16px;
+  right: 1rem;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: -webkit-box;
@@ -433,7 +433,7 @@ html body main header .search-wrap button span {
   color: #fff;
 }
 html body main header .search-wrap button span.material-symbols-outlined {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 html body main section.weather-info {
   display: -webkit-box;
@@ -443,8 +443,8 @@ html body main section.weather-info {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  gap: 16px;
-  padding: 0 32px;
+  gap: 1rem;
+  padding: 0 2rem;
 }
 html body main section.weather-info .location-date-container,
 html body main section.weather-info .weather-summary-container,
@@ -461,10 +461,10 @@ html body main section.weather-info .weather-conditions-container {
 }
 html body main section.weather-info .location-date-container,
 html body main section.weather-info .weather-summary-container {
-  font-size: 48px;
+  font-size: 3rem;
 }
 html body main section.weather-info .weather-conditions-container {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 html body main section.weather-info .location,
 html body main section.weather-info .condition-item {
@@ -474,39 +474,43 @@ html body main section.weather-info .condition-item {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 6px;
+  gap: 0.375rem;
+}
+html body main section.weather-info .location span.material-symbols-outlined,
+html body main section.weather-info .condition-item span.material-symbols-outlined {
+  font-size: 2.5rem;
 }
 html body main section.weather-info .weather-icon {
-  width: 240px;
-  height: 240px;
+  width: 15rem;
+  height: 15rem;
 }
 html body main section.weather-info .weather-summary-info {
   text-align: end;
 }
 html body main section.weather-info .condition-item span {
-  font-size: 80px;
+  font-size: 5rem;
 }
 html body main section.weather-info .forecast-items-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 56px;
+  gap: 3.5rem;
   overflow-x: scroll;
-  padding-bottom: 24px;
+  padding-bottom: 1.5rem;
 }
 html body main section.weather-info .forecast-items-container::-webkit-scrollbar {
-  height: 16px;
+  height: 1rem;
 }
 html body main section.weather-info .forecast-items-container::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
-  border-radius: 100px;
+  border-radius: 6.25rem;
 }
 html body main section.weather-info .forecast-items-container::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.15);
-  border-radius: 100px;
+  border-radius: 6.25rem;
 }
 html body main section.weather-info .forecast-items-container .forecast-item {
-  min-width: 280px;
+  min-width: 17.5rem;
   background: rgba(255, 255, 255, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -515,15 +519,15 @@ html body main section.weather-info .forecast-items-container .forecast-item {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  gap: 6px;
-  padding: 10px;
+  gap: 0.375rem;
+  padding: 0.625rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   -webkit-transition: 0.3s background;
   transition: 0.3s background;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 html body main section.weather-info .forecast-items-container .forecast-item:hover {
   background: rgba(255, 255, 255, 0.25);
@@ -532,8 +536,8 @@ html body main section.weather-info .forecast-items-container .forecast-item .fo
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
 }
 html body main section.section-message {
   display: -webkit-box;
@@ -546,13 +550,13 @@ html body main section.section-message {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  gap: 12px;
+  gap: 0.75rem;
   text-align: center;
   margin-top: 5%;
 }
 html body main section.section-message img {
   width: auto;
-  max-height: 480px;
+  max-height: 30rem;
   min-width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
@@ -561,105 +565,116 @@ html body main section.section-message div {
   font-weight: bold;
 }
 html body main section.section-message div h1 {
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 html body main section.section-message div h4 {
-  font-size: 16px;
+  font-size: 1rem;
 }
 @media (max-width: 1399px) {
+  html body main section.weather-info .location-date-container,
+  html body main section.weather-info .weather-summary-container {
+    font-size: 2rem;
+  }
   html body main section.weather-info .forecast-items-container {
-    gap: 40px;
+    gap: 2.5rem;
   }
   html body main section.weather-info .forecast-items-container .forecast-item {
-    min-width: 192px;
+    min-width: 12rem;
   }
   html body main section.section-message img {
-    max-height: 400px;
+    max-height: 25rem;
   }
 }
 @media (max-width: 1000px) {
   html body main section.weather-info {
-    gap: 32px;
+    gap: 2rem;
   }
   html body main section.weather-info .location-date-container,
   html body main section.weather-info .weather-summary-container {
-    font-size: 36px;
+    font-size: 1.75rem;
   }
   html body main section.weather-info .weather-conditions-container {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   html body main section.weather-info .weather-icon {
-    width: 208px;
-    height: 208px;
+    width: 13rem;
+    height: 13rem;
   }
   html body main section.weather-info .condition-item span {
-    font-size: 64px;
+    font-size: 4rem;
   }
   html body main section.weather-info .forecast-items-container {
-    gap: 28px;
+    gap: 1.75rem;
   }
   html body main section.weather-info .forecast-items-container .forecast-item {
-    min-width: 144px;
+    min-width: 9rem;
   }
   html body main section.section-message img {
-    max-height: 320px;
+    max-height: 20rem;
   }
 }
 @media (max-width: 768px) {
   html body main {
     width: 85%;
-    height: 640px;
+    height: 40rem;
   }
-  html body main header input {
-    padding: 8px 16px;
-    font-size: 20px;
+  html body main header .quick-city button {
+    width: 3.125rem;
+    height: 3.125rem;
   }
-  html body main header input::-webkit-input-placeholder {
-    font-size: 16px;
+  html body main header .quick-city button span {
+    font-size: 2.5rem;
   }
-  html body main header input::-moz-placeholder {
-    font-size: 16px;
+  html body main header .search-wrap input {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
   }
-  html body main header input:-ms-input-placeholder {
-    font-size: 16px;
+  html body main header .search-wrap input::-webkit-input-placeholder {
+    font-size: 0.8rem;
   }
-  html body main header input::-ms-input-placeholder {
-    font-size: 16px;
+  html body main header .search-wrap input::-moz-placeholder {
+    font-size: 0.8rem;
   }
-  html body main header input::placeholder {
-    font-size: 16px;
+  html body main header .search-wrap input:-ms-input-placeholder {
+    font-size: 0.8rem;
   }
-  html body main header button span.material-symbols-outlined {
-    font-size: 24px;
+  html body main header .search-wrap input::-ms-input-placeholder {
+    font-size: 0.8rem;
+  }
+  html body main header .search-wrap input::placeholder {
+    font-size: 0.8rem;
+  }
+  html body main header .search-wrap button span.material-symbols-outlined {
+    font-size: 1.5rem;
   }
   html body main section.weather-info {
     padding: 0;
-    gap: 16px;
+    gap: 1rem;
   }
   html body main section.weather-info .location-date-container,
   html body main section.weather-info .weather-summary-container {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   html body main section.weather-info .weather-conditions-container {
-    font-size: 16px;
+    font-size: 1rem;
   }
   html body main section.weather-info .weather-icon {
-    width: 160px;
-    height: 160px;
+    width: 10rem;
+    height: 10rem;
   }
   html body main section.weather-info .condition-item span {
-    font-size: 48px;
+    font-size: 3rem;
   }
   html body main section.weather-info .forecast-items-container {
-    gap: 16px;
+    gap: 1rem;
   }
   html body main section.weather-info .forecast-items-container .forecast-item {
-    min-width: 144px;
+    min-width: 9rem;
   }
   html body main section.weather-info .forecast-items-container .forecast-item .forecast-item-icon {
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
   }
 }
 html body .filter .popup {
